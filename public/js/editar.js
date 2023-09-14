@@ -1,3 +1,5 @@
+//const { post } = require("../../routes/blog.routes");
+
 // Referencia al elemento de formulario html
 const formGuardar = document.querySelector("#form-guardar");
 

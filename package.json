@@ -9,13 +9,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/aalesann/21523A-practica-express.git"
+    "url": "git+https://github.com/Insa76/argProgNodjs.git"
   },
   "keywords": [],
   "author": "Carlos Diego Insaurralde",
   "license": "ISC",
   "bugs": {
-    "url": 
+    "url": " https://github.com/Insa76/argProgNodjs.git"
   },
   "homepage": "",
   "dependencies": {

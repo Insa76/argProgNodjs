@@ -1,6 +1,4 @@
 // Se implementa el enrutador de Express
-// const router = require('express').Router();
-
 const { Router } = require("express");
 const router = Router();
 const {

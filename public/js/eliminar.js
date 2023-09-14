@@ -1,5 +1,5 @@
 // Referencia al elemento de formulario html
-//const formGuardar = document.querySelector("#form-guardar");
+const formGuardar = document.querySelector("#form-guardar");
 
 const eliminarPost = async (id) => {
   const response = await fetch(`/post/${id}`);
