@@ -1,0 +1,65 @@
+<%-include('partials/head') %> <%-include('partials/header') %>
+<h3 class="text-center"><b>&lt;Admin Panel &gt;</b></h3>
+<div class="container mt-5">
+  <div class="row">
+    <div class="col">
+      <h4 class="text-center"><b>Editar Post /&gt;</b></h4>
+      <form action="#" id="form-guardar" data-id="<%= id  %>">
+        <div class="mb-3">
+          <input
+            type="text"
+            id="titulo-post"
+            class="form-control"
+            placeholder="Título del Post"
+          />
+        </div>
+
+        <div class="mb-3">
+          <div class="form">
+            <textarea
+              id="detalle-post"
+              class="form-control"
+              placeholder="Contenido"
+              style="height: 100px"
+            ></textarea>
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <input type="date" name="" id="fecha" class="rounded" />
+        </div>
+
+        <div class="mb-3">
+          <input
+            type="text"
+            id="url-img"
+            class="form-control"
+            placeholder="Url imagen"
+          />
+        </div>
+
+        <button
+          type="submit"
+          id="btn-guardar"
+          class="btn btn-dark mb-5"
+          value="Guardar"
+        >
+          Guardar
+        </button>
+
+        <button
+          type="submit"
+          id="btn-eliminar"
+          class="btn btn-danger mb-5"
+          value="Eliminar"
+        >
+          Eliminar
+        </button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<script src="/js/editar.js"></script>
+
+<%-include('partials/footer') %>
