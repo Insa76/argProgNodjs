@@ -23,6 +23,11 @@ section {
   font-size: 15px;
 }
 
+section a {
+  height: 40px;
+  width: 70px;
+}
+
 footer {
   background-color: black;
   height: 100px;

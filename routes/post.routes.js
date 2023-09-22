@@ -1,4 +1,5 @@
 // Se implementa el enrutador de Express
+const { body, validationResult } = require("express-validator");
 const { Router } = require("express");
 const router = Router();
 const {
@@ -7,7 +8,7 @@ const {
   eliminarPost,
   obtenerPosts,
   obtenerPost,
-} = require("../controllers/blog.controllers");
+} = require("../controllers/post.controllers");
 
 // ==================================================
 //         Rutas para renderizar vistas

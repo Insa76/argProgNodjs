@@ -1,59 +1,76 @@
-<%-include('partials/head') %> <%-include('partials/header') %>
+<%-include('partials/head') %>
 <h3 class="text-center"><b>&lt;Admin Panel &gt;</b></h3>
 <div class="container mt-5">
   <div class="row">
     <div class="col">
       <h4 class="text-center"><b>Agregar Post /&gt;</b></h4>
-      <form action="#" id="form-guardar">
+      <form action="#" method="post" id="form-guardar">
         <div class="mb-3">
           <input
             type="text"
             id="titulo-post"
+            name="titulo-post"
             class="form-control"
             placeholder="Título del Post"
+            required
           />
         </div>
-
-        <!--<div class="mb-3">
-          <div class="form-floating">
-            <textarea
-              id="detalle-post"
-              class="form-control"
-              placeholder="Ingrese detalle"
-              id="floatingTextarea2"
-              style="height: 100px"
-            ></textarea>
-            <label for="floatingTextarea2">Contenido</label>
-          </div>
-        </div>-->
 
         <div class="mb-3">
           <div class="form">
             <textarea
+              name="detalle-post"
               id="detalle-post"
               class="form-control"
               placeholder="Contenido"
               style="height: 100px"
+              required
             ></textarea>
           </div>
         </div>
 
-        <div class="mb-3">
-          <input type="date" name="" id="fecha" class="rounded" />
+        <div class="d-flex">
+          <div class="mb-3 p-0">
+            <input
+              type="text"
+              id="autor"
+              name="autor"
+              class="form-control"
+              placeholder="Autor del Post"
+              required
+            />
+          </div>
+
+          <div class="mb-3 mx-3">
+            <input
+              type="date"
+              name="fecha"
+              id="fecha"
+              class="form-control"
+              required
+            />
+          </div>
         </div>
 
         <div class="mb-3">
           <input
             type="text"
             id="url-img"
+            name="url-img"
             class="form-control"
             placeholder="Url imagen"
+            required
           />
         </div>
         <button type="submit" id="btn-guardar" class="btn btn-dark mb-5">
           Guardar
         </button>
       </form>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <main class="d-flex flex-column" id="lista-publicaciones">Posts</main>
     </div>
   </div>
 </div>

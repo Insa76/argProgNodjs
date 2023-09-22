@@ -3,6 +3,7 @@ const express = require("express");
 const cors = require("cors");
 const morgan = require("morgan");
 const path = require("path");
+const { body, validationResult } = require("express-validator");
 
 // Conexión a Base de Datos
 const { sequelize } = require("./database");
@@ -22,6 +23,7 @@ const port = process.env.PORT || 3000;
 app.use(cors());
 app.use(morgan("dev"));
 app.use(express.json()); // Para que el servidor pueda comprender datos en formato json
+app.use(express.urlencoded({ extended: true }));
 
 // Archivos estáticos
 app.use(express.static(path.join(__dirname, "public")));
@@ -30,6 +32,6 @@ app.use(express.static(path.join(__dirname, "public")));
 app.set("view engine", "ejs");
 
 // Rutas
-app.use(require("./routes/blog.routes"));
+app.use(require("./routes/post.routes"));
 
 app.listen(port, () => console.log(`Servidor en http://localhost:${port}`));

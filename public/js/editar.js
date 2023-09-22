@@ -1,5 +1,3 @@
-//const { post } = require("../../routes/blog.routes");
-
 // Referencia al elemento de formulario html
 const formGuardar = document.querySelector("#form-guardar");
 
@@ -17,11 +15,13 @@ document.addEventListener("DOMContentLoaded", async () => {
   const contenido = document.querySelector("#detalle-post");
   const url_img = document.querySelector("#url-img");
   const fecha = document.querySelector("#fecha");
+  const autor = document.querySelector("#autor");
 
   titulo.value = post.titulo;
   contenido.value = post.contenido;
   url_img.value = post.url_imagen;
   fecha.value = post.fecha;
+  autor.value = post.autor;
 });
 
 formGuardar.addEventListener("submit", async (e) => {
@@ -34,6 +34,7 @@ formGuardar.addEventListener("submit", async (e) => {
   const contenido = document.querySelector("#detalle-post").value;
   const url_img = document.querySelector("#url-img").value;
   const fecha = document.querySelector("#fecha").value;
+  const autor = document.querySelector("#autor").value;
 
   // Enviar al servidor
   const response = await fetch(`/post/${id}`, {
@@ -41,9 +42,10 @@ formGuardar.addEventListener("submit", async (e) => {
     headers: {
       "Content-Type": "application/json",
     },
-    body: JSON.stringify({ titulo, contenido, url_img, fecha }),
+    body: JSON.stringify({ titulo, contenido, url_img, fecha, autor }),
   });
   const data = await response.json();
+  console.log(data);
 
   alert(data.msg);
   location.href = "/";

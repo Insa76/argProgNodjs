@@ -20,6 +20,10 @@ const PostSchema = sequelize.define(
       type: DataTypes.DATE,
       allowNull: false,
     },
+    autor: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
     url_img: {
       type: DataTypes.STRING,
       allowNull: false,

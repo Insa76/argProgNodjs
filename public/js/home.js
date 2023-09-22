@@ -15,7 +15,9 @@ const mostrarPost = (posts, elementoHtml) => {
             <div class="d-flex flex-column justify-content-between">
                 <h5><b>${post.titulo}</b></h5>
                 <p>${post.contenido}</p>
-                <p><b>Fecha del Post ${post.fecha}</b></p>
+                <p><b>Autor:  ${post.autor}</b></p>
+                <p><b>Fecha :  ${post.fecha}</b></p>
+                
             </div>
             </section>
         `;

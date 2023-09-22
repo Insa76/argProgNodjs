@@ -27,19 +27,13 @@ formGuardar.addEventListener("submit", async (e) => {
 
   const id = formGuardar.dataset.id;
 
-  // Se capturan los datos del formulario
-  const titulo = document.querySelector("#titulo-post").value;
-  const contenido = document.querySelector("#detalle-post").value;
-  const url_img = document.querySelector("#url-img").value;
-  const fecha = document.querySelector("#fecha").value;
-
   // Enviar al servidor
   const response = await fetch(`/post/${id}`, {
     method: "delete",
     headers: {
       "Content-Type": "application/json",
     },
-    body: JSON.stringify({ titulo, contenido, url_img, fecha }),
+    body: JSON.stringify({ titulo, contenido, url_img, fecha, autor }),
   });
   const data = await response.json();
 
