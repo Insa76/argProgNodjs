@@ -4,13 +4,13 @@ const obtenerPosts = async () => {
   return data;
 };
 
-const mostrarPost = (posts, elementoHtml) => {
+const mostrarPosts = (posts, elementoHtml) => {
   let secciones = "";
 
   // Método para recorrer los registros
   posts.forEach((post) => {
     secciones += `
-            <section class="d-flex  mb-5 p-1 rounded border border-dark">
+            <section class="d-flex  mb-5 p-1 rounded border border-dark ">
             <img src="${post.url_img}" class="rounded p-3" height=100 >
             <div class="d-flex flex-column justify-content-between">
                 <h5><b>${post.titulo}</b></h5>
@@ -34,5 +34,5 @@ document.addEventListener("DOMContentLoaded", async () => {
   // Modificar el DOM para mostrar las publicaciones
   const main = document.querySelector("#lista-publicaciones");
 
-  mostrarPost(posts, main);
+  mostrarPosts(posts, main);
 });

@@ -11,6 +11,42 @@ formGuardar.addEventListener("submit", async (e) => {
   const fecha = document.querySelector("#fecha").value;
   const autor = document.querySelector("#autor").value;
 
+  // Se validan los campos del formulario
+
+  if (titulo.length == 0) {
+    alert("El titulo no puede estar vacio");
+    return false;
+  }
+
+  if (contenido.length == 0) {
+    alert("El contenido no puede estar vacio");
+    return false;
+  }
+
+  if (url_img.length == 0) {
+    alert("La URL no puede estar vacio");
+    return false;
+  }
+
+  if (fecha.length == 0) {
+    alert("El fecha no puede estar vacio");
+    return false;
+  }
+  if (autor.length == 0) {
+    alert("El autor no puede estar vacio");
+    return false;
+  }
+  //if (
+  //titulo.length == 0 ||
+  //contenido.length == 0 ||
+  //url_img.length == 0 ||
+  // fecha.length == 0 ||
+  // autor.length
+  //) {
+  // alert("No puede dejar campos vacios");
+  // return false;
+  //}
+
   // Enviar al servidor
   const response = await fetch("/post", {
     method: "post",
@@ -31,7 +67,7 @@ const obtenerPosts = async () => {
   return data;
 };
 
-const mostrarPost = (posts, elementoHtml) => {
+const mostrarPosts = (posts, elementoHtml) => {
   let secciones = "";
 
   // Método para recorrer los registros
@@ -49,7 +85,7 @@ const mostrarPost = (posts, elementoHtml) => {
                  
               </div>
               <a href= "/admin/${post.id}" class="btn btn-dark m-5">Edit</a>
-              <a href= "/admin" class="btn btn-dark mt-5">Borrar</a>
+              <a href= "/eliminar/${post.id}" class="btn btn-dark mt-5">Borrar</a>
 
             </div>  
             </section>
@@ -62,10 +98,11 @@ const mostrarPost = (posts, elementoHtml) => {
 
 document.addEventListener("DOMContentLoaded", async () => {
   const posts = await obtenerPosts();
+
   console.log(posts);
 
   // Modificar el DOM para mostrar las publicaciones
   const main = document.querySelector("#lista-publicaciones");
 
-  mostrarPost(posts, main);
+  mostrarPosts(posts, main);
 });

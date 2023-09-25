@@ -21,6 +21,7 @@ img {
 
 section {
   font-size: 15px;
+  box-shadow: 10px 5px 5px black;
 }
 
 section a {

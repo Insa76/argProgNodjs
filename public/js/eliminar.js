@@ -15,11 +15,13 @@ document.addEventListener("DOMContentLoaded", async () => {
   const contenido = document.querySelector("#detalle-post");
   const url_img = document.querySelector("#url-img");
   const fecha = document.querySelector("#fecha");
+  const autor = document.querySelector("#autor");
 
   titulo.value = post.titulo;
   contenido.value = post.contenido;
   url_img.value = post.url_imagen;
   fecha.value = post.fecha;
+  autor.value = post.autor;
 });
 
 formGuardar.addEventListener("submit", async (e) => {
@@ -33,7 +35,6 @@ formGuardar.addEventListener("submit", async (e) => {
     headers: {
       "Content-Type": "application/json",
     },
-    body: JSON.stringify({ titulo, contenido, url_img, fecha, autor }),
   });
   const data = await response.json();
 
