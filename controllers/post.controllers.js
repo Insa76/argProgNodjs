@@ -41,11 +41,11 @@ ctrl.obtenerPosts = async (req, res) => {
 ctrl.actualizarPost = async (req, res) => {
   try {
     const { id } = req.params;
-
     const post = await Posts.findByPk(id);
     post.set(req.body);
 
-    await post.save(); // Con esta instrucción se guarda en la BD
+    //  Se guarda en la BD
+    await post.save();
 
     res.json({
       msg: "Post actualizado ",

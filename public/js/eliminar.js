@@ -1,5 +1,5 @@
 // Referencia al elemento de formulario html
-const formGuardar = document.querySelector("#form-guardar");
+const formGuardar = document.querySelector("#form-eliminar");
 
 const eliminarPost = async (id) => {
   const response = await fetch(`/post/${id}`);
@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   titulo.value = post.titulo;
   contenido.value = post.contenido;
-  url_img.value = post.url_imagen;
+  url_img.value = post.url_img;
   fecha.value = post.fecha;
   autor.value = post.autor;
 });

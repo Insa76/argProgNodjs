@@ -4,7 +4,7 @@
   <div class="row">
     <div class="col">
       <h4 class="text-center"><b>Editar Post /&gt;</b></h4>
-      <form action="#" id="form-guardar" data-id="<%= id  %>">
+      <form action="#" method="put" id="form-editar" data-id="<%= id  %>">
         <div class="mb-3">
           <input
             type="text"
@@ -57,10 +57,12 @@
             value=""
           />
         </div>
-
-        <button type="submit" id="btn-guardar" class="btn btn-dark mb-5">
-          Guardar
-        </button>
+        <div class="d-flex justify-content-center gap-2 mt-4 mb-5">
+          <button type="submit" id="btn-guardar" class="btn btn-dark">
+            Guardar
+          </button>
+          <a href="/" class="btn btn-danger p-1" id="cancelar">Cancelar</a>
+        </div>
       </form>
     </div>
   </div>
